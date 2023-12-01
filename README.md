@@ -1,4 +1,5 @@
 # Advent of Code 2023
+![Build Status](https://github.com/JamesRitchie/aoc2023/actions/workflows/rust.yml/badge.svg)
 
 My solutions to [Advent of Code 2023](https://adventofcode.com/2023), implemented in Rust.
 This is the first project I've ever written in Rust that wasn't a tutorial, so whilst I'm trying to keep it idiomatic it might very well not be perfect!
