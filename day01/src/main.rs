@@ -1,4 +1,4 @@
-use std::path::PathBuf;
+use std::{path::PathBuf, process};
 
 use clap::Parser;
 
@@ -18,5 +18,8 @@ struct Cli {
 fn main() {
     let cli = Cli::parse();
 
-    run(cli.puzzle_input_path, cli.part_two);
+    if let Err(e) = run(cli.puzzle_input_path, cli.part_two) {
+        eprintln!("Error: {e}");
+        process::exit(1);
+    }
 }

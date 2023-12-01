@@ -6,7 +6,7 @@ use day01;
 fn test_part_one() {
     let mut input_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
     input_path.push("tests/data/sample_input_part_one.txt");
-    let answer = day01::run(input_path, false);
+    let answer = day01::run(input_path, false).unwrap();
     assert_eq!(answer, 142);
 }
 
@@ -14,6 +14,6 @@ fn test_part_one() {
 fn test_part_two() {
     let mut input_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
     input_path.push("tests/data/sample_input_part_two.txt");
-    let answer = day01::run(input_path, true);
+    let answer = day01::run(input_path, true).unwrap();
     assert_eq!(answer, 281); 
 }

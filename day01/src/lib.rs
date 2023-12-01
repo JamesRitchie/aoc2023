@@ -1,4 +1,4 @@
-use std::{path::PathBuf, fs};
+use std::{path::PathBuf, fs, error::Error};
 
 // List of number words to convert to digits.
 // Words could overlap, but by one char at most, so we include one char before and after the 
@@ -51,11 +51,11 @@ fn compute_answer(puzzle_input: &str, part_two: bool) -> i32 {
         .sum()
 }
 
-pub fn run(input_path: PathBuf, part_two: bool) -> i32 {
-    let puzzle_input = fs::read_to_string(input_path).unwrap();
+pub fn run(input_path: PathBuf, part_two: bool) -> Result<i32, Box<dyn Error>> {
+    let puzzle_input = fs::read_to_string(input_path)?;
     let answer = compute_answer(&puzzle_input, part_two);
     println!("The answer is {answer}");
-    answer
+    Ok(answer)
 }
 
 #[cfg(test)]
