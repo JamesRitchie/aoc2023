@@ -3,4 +3,5 @@ resolver = "2"
 members = [
     "util",
     "day01",
+    "day02",
 ]
