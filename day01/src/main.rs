@@ -1,17 +1,8 @@
-use std::{path::PathBuf, process};
-
 use clap::Parser;
+use std::process;
 
 use day01::run;
-
-#[derive(Parser)]
-#[command(author, version, about, long_about = None)]
-struct Cli {
-    #[arg(long)]
-    part_two: bool,
-
-    puzzle_input_path: PathBuf,
-}
+use util::Cli;
 
 fn main() {
     let cli = Cli::parse();
