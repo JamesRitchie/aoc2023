@@ -18,11 +18,10 @@ const NUMBER_REPLACEMENT: [(&str, &str); 9] = [
 
 fn replace_number_strings(line: &str) -> String {
     // Replaces number words in the string according to the mapping given by NUMBER_REPLACEMENT
-    let mut new_line = String::from(line);
-    for (target, replacement) in NUMBER_REPLACEMENT {
-        new_line = new_line.replace(target, replacement);
-    }
-    new_line
+    let new_line = String::from(line);
+    NUMBER_REPLACEMENT
+        .iter()
+        .fold(new_line, |l, (t, r)| l.replace(t, r))
 }
 
 fn parse_line(line: &str, part_two: bool) -> i32 {
