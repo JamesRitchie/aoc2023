@@ -1,5 +1,5 @@
 ///
-/// This is a pretty horrendous quicky and hacky first go and could do with a lot of tidying up.
+/// This is a pretty horrendous quick and hacky first go and could do with a lot of tidying up.
 use std::{error::Error, fs, path::PathBuf, str::FromStr};
 
 use regex::{Match, Regex};
@@ -122,8 +122,8 @@ impl EngineSchematic {
             let gears = line
                 .chars()
                 .enumerate()
-                .filter(|(j, c)| c == &'*')
-                .map(|(j, c)| j);
+                .filter(|(_, c)| c == &'*')
+                .map(|(j, _)| j);
             for j in gears {
                 gear_ratio_sum += self.get_gear_neighbours(i, j);
             }
