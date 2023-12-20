@@ -1,5 +1,7 @@
 use std::{error::Error, fs, iter::zip, path::PathBuf};
 
+use util::transpose;
+
 fn find_vertical_reflection(block: &Vec<Vec<char>>, part_two: bool) -> i64 {
     for split in 1..block.len() {
         let mut upper = block[..split].to_vec();
@@ -26,15 +28,6 @@ fn find_vertical_reflection(block: &Vec<Vec<char>>, part_two: bool) -> i64 {
         }
     }
     0
-}
-
-fn transpose<T>(block: &Vec<Vec<T>>) -> Vec<Vec<T>>
-where
-    T: Clone,
-{
-    (0..(block[0].len()))
-        .map(|c| block.iter().map(|r| r[c].clone()).collect::<Vec<_>>())
-        .collect::<Vec<_>>()
 }
 
 fn parse_block(block_str: &str, part_two: bool) -> i64 {
