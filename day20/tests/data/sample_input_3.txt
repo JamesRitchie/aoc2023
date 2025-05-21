@@ -1,0 +1,11 @@
+broadcaster -> a1, b1, c1
+%a1 -> a2
+%a2 -> conj
+%b1 -> b2
+%b2 -> b3
+%b3 -> conj
+%c1 -> c2
+%c2 -> c3
+%c3 -> c4
+%c4 -> conj
+&conj -> rx
